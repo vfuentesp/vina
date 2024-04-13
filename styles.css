@@ -1,0 +1,163 @@
+/*diseño del index*/
+body {
+  background-color: #f0f8ff; /* Azul claro */
+  color: #000; /* Negro */
+}
+header {
+  background-color: #4169e1; /* Azul rey */
+  color: #fff; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+footer {
+  background-color: #4169e1; /* Azul rey */
+  color: #f7eded; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+.btn-primary {
+  background-color: #4169e1; /* Azul rey */
+  border-color: #4169e1; /* Azul rey */
+}
+.btn-primary:hover {
+  background-color: #3558cb; /* Azul rey oscuro */
+  border-color: #3558cb; /* Azul rey oscuro */
+}
+/* Estilos para el texto en el carrusel */
+.carousel-caption h5 {
+  color: #4169e1; /* Azul rey */
+}
+
+/*diseño de solicitudes*/
+
+body {
+  background-color: #f0f8ff; /* Azul claro */
+  color: #000; /* Negro */
+}
+header {
+  background-color: #4169e1; /* Azul rey */
+  color: #fff; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+footer {
+  background-color: #4169e1; /* Azul rey */
+  color: #fff; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.card {
+  width: 18rem;
+  text-align: center;
+}
+.card-img-top {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.btn-volver {
+  background-color: #000; /* Negro */
+  border-color: #000; /* Negro */
+  color: #fff; /* Blanco */
+}
+.btn-volver:hover {
+  background-color: #333; /* Gris oscuro */
+  border-color: #333; /* Gris oscuro */
+}
+
+
+/* diseño de las solicitudes nuevas */
+body {
+  background-color: #f0f8ff; /* Azul claro */
+  color: #000; /* Negro */
+}
+header {
+  background-color: #4169e1; /* Azul rey */
+  color: #fff; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+footer {
+  background-color: #4169e1; /* Azul rey */
+  color: #fff; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+.card {
+  border-color: #4169e1; /* Azul rey */
+}
+.btn-primary {
+  background-color: #4169e1; /* Azul rey */
+  border-color: #4169e1; /* Azul rey */
+}
+.btn-primary:hover {
+  background-color: #3558cb; /* Azul rey oscuro */
+  border-color: #3558cb; /* Azul rey oscuro */
+}
+
+/*diseño solicitudes pendientes*/
+
+body {
+  background-color: #f0f8ff; /* Azul claro */
+  color: #000; /* Negro */
+}
+header {
+  background-color: #4169e1; /* Azul rey */
+  color: #fff; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+footer {
+  background-color: #4169e1; /* Azul rey */
+  color: #fff; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+.card {
+  border-color: #4169e1; /* Azul rey */
+}
+.btn-primary {
+  background-color: #4169e1; /* Azul rey */
+  border-color: #4169e1; /* Azul rey */
+}
+.btn-primary:hover {
+  background-color: #3558cb; /* Azul rey oscuro */
+  border-color: #3558cb; /* Azul rey oscuro */
+}
+
+/*solicitudes listas*/
+
+body {
+  background-color: #f0f8ff; /* Azul claro */
+  color: #000; /* Negro */
+}
+header {
+  background-color: #4169e1; /* Azul rey */
+  color: #fff; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+footer {
+  background-color: #4169e1; /* Azul rey */
+  color: #fff; /* Blanco */
+  padding: 20px 0;
+  text-align: center;
+}
+.card {
+  border-color: #4169e1; /* Azul rey */
+}
+.btn-primary {
+  background-color: #4169e1; /* Azul rey */
+  border-color: #4169e1; /* Azul rey */
+}
+.btn-primary:hover {
+  background-color: #3558cb; /* Azul rey oscuro */
+  border-color: #3558cb; /* Azul rey oscuro */
+}
+
