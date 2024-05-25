@@ -1,80 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nueva Solicitud</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Estilos para el contenedor del logo */
-    #logo-container {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 100px; /* Ancho del logo */
-      height: 100px; /* Altura del logo */
-    }
-    #logo-container img {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L. Solicitud</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <!-- Contenedor del logo con enlace -->
-<div id="logo-container">
-  <a href="./intex.html">
-    <img src="./img/logo.png" alt="Logo">
-  </a>
-</div>
-  <header class="text-center">
-    <h1>Crear Nueva Solicitud</h1>
-  </header>
-  <section class="container">
-    <form id="solicitudForm">
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
-      </div>
-      <div class="mb-3">
-        <label for="mensaje" class="form-label">Mensaje</label>
-        <textarea class="form-control" id="mensaje" rows="3" placeholder="Ingrese su mensaje"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" id="enviarSolicitud">Enviar Solicitud</button>
-    </form>
-  </section>
-  <footer class="text-center mt-5">
-    <a href="./intex.html" class="btn btn-secondary">Volver al Inicio</a>
-  </footer>
-
-  <div class="modal" id="modalSolicitud" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">¡Solicitud Enviada!</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./intex.html">
+                <img src="./imagenes/logo.png" alt="Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./usuario.inicio.html">Usuario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="l.solicitud.html">Solicitudes listas</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="p.solicitudes.html">Solicitudes pendientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./nuev.solic.html">Nuevas solicitudes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./solicitud.html">Generar solicitud</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
         </div>
-        <div class="modal-body">
-          <p>Tu solicitud ha sido enviada correctamente.</p>
+      </nav>
+    <!-- Main Container -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
+                <div class="text-center">
+                    <img src="./imagenes/profile_placeholder.png" alt="Foto del Usuario" class="profile-img">
+                    <div class="user-info">
+                        <h4>Nombre del Usuario</h4>
+                        <p>Correo: usuario@correo.com</p>
+                        <p>Cargo: Gerente</p>
+                        <p>Teléfono: +123456789</p>
+                    </div>
+                    <button id="logoutButton" class="btn btn-danger mt-3">Cerrar Sesión</button>
+                </div>
+            </div>
+            <!-- Main Content -->
+            <div class="col-md-9 main-content">
+                <div class="tit">
+                    <h2>Nuevas solicitudes</h2>
+                </div>
+                <div class="row">
+                    <!-- Cards for solicitudes -->
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Solicitud #1</h5>
+                                <p class="card-text">Descripción breve de la solicitud #1.</p>
+                                <a href="#" class="btn btn-primary">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Solicitud #2</h5>
+                                <p class="card-text">Descripción breve de la solicitud #2.</p>
+                                <a href="#" class="btn btn-primary">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Solicitud #3</h5>
+                                <p class="card-text">Descripción breve de la solicitud #3.</p>
+                                <a href="#" class="btn btn-primary">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Agregar más tarjetas según sea necesario -->
+                </div>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.getElementById('solicitudForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      var modal = new bootstrap.Modal(document.getElementById('modalSolicitud'));
-      modal.show();
-    });
-  </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            window.location.href = 'intex.html';
+        });
+    </script>
 </body>
 </html>
