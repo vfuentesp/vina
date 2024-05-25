@@ -1,0 +1,59 @@
+body {
+  background: url('./imagenes/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: black; /* Texto en negro */
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-body h5.card-title {
+  color: black; /* Título de la tarjeta en negro */
+}
+
+.card-body p.card-text {
+  color: black; /* Texto de la tarjeta en negro */
+}
+
+.main {
+  padding: 20px;
+}
+
+.navbar-nav .nav-link {
+  color: black; /* Texto de los enlaces del navbar en negro */
+}
+
+.navbar-brand img.logo {
+  height: 60px; /* Ajusta la altura del logo */
+}
+
+.row.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #f8f9fa;
+  padding: 15px;
+}
+
+.sidebar img.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.sidebar .user-info {
+  margin-top: 15px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.btn {
+  width: 100%;
+}
+
