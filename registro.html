@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./intex.html">
+                <img src="./imagenes/logo.png" alt="Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./intex.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./planes.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./inicio.html">Mi cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contáctanos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario de Registro -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">REGISTRO DE USUARIO</h5>
+                        <form id="registroForm">
+                            <div class="mb-3">
+                                <label for="nombreCompleto" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombreCompleto" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rut" class="form-label">RUT (sin puntos con guión)</label>
+                                <input type="text" class="form-control" id="rut" required>
+                            <div class="mb-3">
+                                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                <input type="date" class="form-control" id="fechaNacimiento" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Número de Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nombre de Usuario</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div id="emailError" class="invalid-feedback">El correo electrónico debe contener el símbolo '@'.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Registrar</button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>¿Ya tienes una cuenta? <a href="./inicio.html">Inicia Sesión</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+           
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var nombreCompleto = document.getElementById('nombreCompleto').value;
+            var fechaNacimiento = document.getElementById('fechaNacimiento').value;
+            var telefono = document.getElementById('telefono').value;
+            var rut = document.getElementById('rut').value;
+            
+            var usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+            // Validar si el correo electrónico ya está en uso
+            var correoExistente = usuarios.some(function(usuario) {
+                return usuario.email === email;
+            // Validar si el usuario ya existe
+            var usuarioExistente = usuarios.find(function(usuario) {
+            return usuario.username === username || usuario.email === email;
+        });
+
+            // Validar si el correo electrónico contiene el símbolo '@'
+            if (!email.includes('@')) {
+                document.getElementById('email').classList.add('is-invalid');
+                document.getElementById('emailError').style.display = 'block';
+                return;
+            } else {
+                document.getElementById('email').classList.remove('is-invalid');
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            
+            });
+
+            if (correoExistente) {
+                alert('El correo electrónico ya está en uso. Por favor, utiliza otro.');
+                return;
+            }
+
+            // Validar si el nombre de usuario ya está en uso
+            var usuarioExistente = usuarios.some(function(usuario) {
+                return usuario.username === username;
+            });
+
+            if (usuarioExistente) {
+                alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
+                return;
+            }
+            
+            // Guardar el nuevo usuario
+            var nuevoUsuario = {
+            username: username,
+            email: email,
+            password: password,
+            nombreCompleto: nombreCompleto,
+            fechaNacimiento: fechaNacimiento,
+            telefono: telefono,
+            rut: rut
+        };
+
+        usuarios.push(nuevoUsuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    
+        alert('Usuario registrado exitosamente.');
+        window.location.href = 'inicio.html'; // Redirige a la página de inicio de sesión
+        });
+           
+    </script>
+</body>
+</html>
